@@ -139,7 +139,11 @@ body.images-off .card img {
   text-align: center;
 }
 
-h2.category            { font-weight: 900; }        /* Jost Black */
+h2.category
+{ 
+  font-weight: 900; 
+  color: var(--categorryColor)
+}
 .card h2
 { 
   font-weight: 700;
@@ -160,4 +164,20 @@ h2.category            { font-weight: 900; }        /* Jost Black */
   background: var(--bg);
   padding: 0.5rem 0;
   margin: 0;
+}
+
+.card + .card {
+  position: relative;
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+}
+
+.card + .card::before {
+  content: "";
+  position: absolute;
+  top: -0.6rem;          /* halfway up the gap */
+  left: 25%;             /* centers the 50 % bar */
+  width: 50%;
+  height: 1px;
+  background: #555A6F;
 }
