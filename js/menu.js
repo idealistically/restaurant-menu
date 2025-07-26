@@ -47,7 +47,7 @@ function renderItem(it) {
     price = `<span class="price-dual">½ Dozen $${it.halfDozen} / Dozen $${it.dozen}</span>`;
   }
   return `
-    <article class="card">
+    <article class="card" data-category="${it.category}">
       ${it.image ? `<img src="${it.image}" alt="${it.name}" loading="lazy" />` : ''}
       ${it.subcategory ? `<h3 class="subcategory">${it.subcategory}</h3>` : ''}
       <h2>${it.name}</h2>
@@ -60,7 +60,7 @@ function renderItem(it) {
 function renderGravy(g) {
   if (g.type === 'group') {
     return `
-      <article class="card">
+      <article class="card" data-category="${it.category}">
         <h2>${g.name}</h2>
         <p>${g.options.join(' / ')}</p>
         <strong>$${g.price}</strong>

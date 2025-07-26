@@ -106,3 +106,85 @@ body.images-off .card img {
   display: flex;
   gap: 0.5rem;
 }
+
+/* ---------- COLUMN LAYOUT ---------- */
+:root {
+  --col1: "shared" "shared" "shared" "shared" "shared";
+  --col2: "entrées" "oysters" "hooked" "hunted" "burgers";
+  --col3: "bowls" "addons" "sides" "pizzas" "lil";
+  --col4: "schnitzels" "gravies" "dessert";
+  --col5: "";
+}
+
+/* 1-col (≤ 599 px) already handled by existing auto-fit grid */
+
+/* 2-col 600–899 px */
+@media (min-width: 600px) and (max-width: 899px) {
+  #menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "shared   schnitzels"
+      "entrées  gravies"
+      "oysters  sides"
+      "hooked   pizzas"
+      "hunted   lil"
+      "bowls    desserts"
+      "addons   desserts";
+  }
+}
+
+/* 3-col 900–1199 px */
+@media (min-width: 900px) and (max-width: 1199px) {
+  #menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "shared   burgers  sides"
+      "entrées  addons   pizzas"
+      "oysters  schnitzels lil"
+      "hooked   gravies  desserts"
+      "hunted   desserts desserts";
+  }
+}
+
+/* 4-col 1200–1499 px */
+@media (min-width: 1200px) and (max-width: 1499px) {
+  #menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "shared   hunted   schnitzels lil"
+      "entrées  burgers  gravies    desserts"
+      "oysters  addons   sides      desserts"
+      "hooked   desserts desserts   desserts";
+  }
+}
+
+/* 5-col ≥ 1500 px */
+@media (min-width: 1500px) {
+  #menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "shared   hooked   burgers  schnitzels pizzas"
+      "entrées  hunted   addons   gravies    lil"
+      "oysters  desserts desserts desserts  desserts";
+  }
+}
+
+/* helper classes so JS drops each category into the right grid area */
+[data-category="TO SHARE"]      { grid-area: shared; }
+[data-category="Entrées"]       { grid-area: entrées; }
+[data-category="Oysters"]       { grid-area: oysters; }
+[data-category="Hooked"]        { grid-area: hooked; }
+[data-category="Hunted"]        { grid-area: hunted; }
+[data-category="Burgers"]       { grid-area: burgers; }
+[data-category="Bowls"]         { grid-area: bowls; }
+[data-category="Add Ons"]       { grid-area: addons; }
+[data-category="Schnitzels"]    { grid-area: schnitzels; }
+[data-category="Gravies & Toppings"] { grid-area: gravies; }
+[data-category="Sides"]         { grid-area: sides; }
+[data-category="Pizzas"]        { grid-area: pizzas; }
+[data-category="Little Hunter"] { grid-area: lil; }
+[data-category="Dessert"]       { grid-area: desserts; }
