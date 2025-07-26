@@ -152,7 +152,8 @@ h2.category
 }
 .card p                
 { 
-  font-weight: 600;
+  font-family: 'Federo', serif;
+  /*font-weight: 600; */
   font-size: var(--fs-dish);
 }
 
@@ -168,7 +169,7 @@ h2.category
 .card + .card {
   position: relative;
   margin-top: 1.2rem;
-  padding-top: 1.2rem;
+  padding-top: 0.2rem;
 }
 
 .card + .card::before {
@@ -177,7 +178,7 @@ h2.category
   top: -0.6rem;          /* halfway up the gap */
   left: 25%;             /* centers the 50 % bar */
   width: 50%;
-  height: 1px;
+  height: 5px;
   background: #555A6F;
 }
 

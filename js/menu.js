@@ -70,29 +70,31 @@ function renderItem(it) {
 }
 
 function renderGravy(g) {
-  if (g.type === 'group') {
-    return `
-      <article class="card" data-category="${it.category}">
-        <h2>${g.name}</h2>
-        <p>${g.options.join(' / ')}</p>
-        <strong>$${g.price}</strong>
-      </article>`;
-  }
-  return renderItem(g);
+  // ALWAYS render the group card
+  return `
+    <article class="card" data-category="Gravies & Toppings">
+      <h2>${g.name}</h2>
+      <p>${Array.isArray(g.options) ? g.options.join(' / ') : '—'}</p>
+      <strong>$${g.price}</strong>
+    </article>`;
 }
 
-function renderMenu(data) {
 
+function renderMenu(data) {
   const grouped = groupBy(data, 'category');
   let html = '';
   Object.entries(grouped).forEach(([cat, items]) => {
-  html += `<div class="category-block">
-           <h2 class="category sticky">
-             ${cat}
-             ${cat === 'Little Hunter' ? '<br><small>Kids Meals come with a choice of soft drink or juice</small>' : ''}
-           </h2>
-           ${items.map(renderItem).join('')}
-         </div>`;
+    html += `<div class="category-block">
+               <h2 class="category sticky">
+                 ${cat}
+                 ${cat === 'Little Hunter' ? '<br><small>Kids Meals come with a choice of soft drink or juice</small>' : ''}
+               </h2>`;
+
+    items.forEach(it => {
+      html += (it.type === 'group') ? renderGravy(it) : renderItem(it);
+    });
+
+    html += `</div>`;
   });
   menuSection.innerHTML = html;
 }

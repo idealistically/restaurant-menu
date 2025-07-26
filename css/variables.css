@@ -19,10 +19,10 @@
 }
 
 [data-theme="dark"] {
-  --bg: #091e3d;
-  --bg-alt: #091a33;
+  --bg: #112849;
+  --bg-alt: #071935;
   --text: #e5e5e5af;
-  --accent: #8289eb;
-  --dollarColor: #50d6ff;
+  --accent: #257cb6;
+  --dollarColor: #8fc1d1;
   --categorryColor: aliceblue;
 }
