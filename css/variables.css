@@ -5,6 +5,7 @@
   --fw-bold:     700;
   --fw-semi-italic: 600;
   --fs-base: clamp(1.25rem, 1.2rem + 0.75vw, 1.725rem);
+  --fs-dish: clamp(1.25rem, 1.2rem + 0.75vw, 1.725rem);
   --gap: clamp(1rem, 2vw, 2rem);
   --radius: 0.5rem;
 
@@ -12,11 +13,15 @@
   --bg-alt: #f7f7f7;
   --text: #111111;
   --accent: #d63031;
+  --price: #0a116d;
+
+
 }
 
 [data-theme="dark"] {
   --bg: #091e3d;
   --bg-alt: #091a33;
-  --text: #e5e5e5;
+  --text: #e5e5e5af;
   --accent: #8289eb;
+  --dollarColor: #50d6ff;
 }
