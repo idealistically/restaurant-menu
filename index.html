@@ -1,32 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Le Bistrot – Menu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header>
     <h1>Le Bistrot</h1>
-    <button id="filterToggle" aria-label="Show filters" hidden>☰</button>
+    <button id="themeToggle" aria-label="Toggle dark mode">🌗</button>
   </header>
 
-  <aside id="filters" hidden>
-    <label><input type="checkbox" value="vegetarian"> Vegetarian</label>
-    <label><input type="checkbox" value="spicy"> Spicy</label>
-    <!-- More filters added on demand -->
-  </aside>
+  <nav id="filters">
+    <button data-filter="all" class="active">All</button>
+    <button data-filter="vegetarian">Vegetarian</button>
+  </nav>
 
-  <main>
-    <section id="menu" class="card-grid" aria-live="polite"></section>
-  </main>
+  <main id="menu" class="grid" aria-live="polite"></main>
 
-  <footer>
-    <small>&copy; 2024 Le Bistrot</small>
-  </footer>
+  <footer>&copy; <span id="year"></span> Le Bistrot</footer>
 
   <script type="module" src="js/menu.js"></script>
 </body>
