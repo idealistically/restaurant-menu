@@ -34,11 +34,15 @@ function applyImageToggle() {
 }
 
 function toggleTheme() {
+  /* keep the toggle for users who need light mode */
   const dark = document.documentElement.dataset.theme === 'dark';
   const next = dark ? '' : 'dark';
   document.documentElement.dataset.theme = next;
   localStorage.setItem('theme', next);
 }
+
+document.documentElement.dataset.theme = 'dark';
+localStorage.setItem('theme', 'dark');
 
 /* ---------- render ---------- */
 function renderItem(it) {
