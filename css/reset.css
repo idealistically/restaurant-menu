@@ -1,1 +1,8 @@
 
+/* tiny modern reset */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font: inherit; }
+body { line-height: 1.5; -webkit-font-smoothing: antialiased; }
