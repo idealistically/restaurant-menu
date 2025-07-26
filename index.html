@@ -1,1 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Le Bistrot – Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Le Bistrot</h1>
+    <button id="filterToggle" aria-label="Show filters" hidden>☰</button>
+  </header>
 
+  <aside id="filters" hidden>
+    <label><input type="checkbox" value="vegetarian"> Vegetarian</label>
+    <label><input type="checkbox" value="spicy"> Spicy</label>
+    <!-- More filters added on demand -->
+  </aside>
+
+  <main>
+    <section id="menu" class="card-grid" aria-live="polite"></section>
+  </main>
+
+  <footer>
+    <small>&copy; 2024 Le Bistrot</small>
+  </footer>
+
+  <script type="module" src="js/menu.js"></script>
+</body>
+</html>
