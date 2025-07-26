@@ -45,6 +45,24 @@ themeBtn.addEventListener('click', () => {
   document.documentElement.dataset.theme = next;
   localStorage.setItem('theme', next);
 });
+/* ---------- images ON / OFF ---------- */
+const imgBtn = document.getElementById('imgToggle');
+const imagesKey = 'images';
+
+// default = OFF
+let imagesOn = localStorage.getItem(imagesKey) !== 'on';
+toggleImages();
+
+imgBtn.addEventListener('click', () => {
+  imagesOn = !imagesOn;
+  toggleImages();
+});
+
+function toggleImages() {
+  document.body.classList.toggle('images-off', !imagesOn);
+  imgBtn.textContent = imagesOn ? '📷 ON' : '📷 OFF';
+  localStorage.setItem(imagesKey, imagesOn ? 'on' : 'off');
+}
 
 // footer year
 yearSpan.textContent = new Date().getFullYear();
