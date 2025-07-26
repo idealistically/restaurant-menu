@@ -1,1 +1,84 @@
 
+@import url("reset.css");
+@import url("variables.css");
+
+body {
+  font-family: var(--ff);
+  font-size: var(--fs-base);
+  background: var(--bg);
+  color: var(--text);
+  padding: var(--gap);
+  transition: background .2s, color .2s;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--gap);
+}
+
+#filters {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-bottom: var(--gap);
+}
+
+button[data-filter] {
+  padding: .5rem .75rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--accent);
+}
+
+button[data-filter].active,
+button[data-filter]:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.card {
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.card img {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.card h2 {
+  margin: .75rem 1rem .25rem;
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin: 0 1rem .5rem;
+  flex: 1;
+}
+
+.card strong {
+  margin: 0 1rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: .875rem;
+  color: var(--text);
+  opacity: .7;
+}
