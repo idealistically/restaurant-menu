@@ -1,10 +1,34 @@
 [
   {
-    "id": "001",
+    "id": 1,
     "name": "Truffle Risotto",
     "price": 22,
     "image": "assets/img/risotto_400.webp",
     "tags": ["vegetarian"],
     "description": "Creamy Arborio rice with black truffle shavings."
+  },
+  {
+    "id": 2,
+    "name": "Grilled Rib-eye",
+    "price": 32,
+    "image": "assets/img/steak_400.webp",
+    "tags": [],
+    "description": "12-oz grass-fed rib-eye, chimichurri, roasted potatoes."
+  },
+  {
+    "id": 3,
+    "name": "Roasted Beet Salad",
+    "price": 14,
+    "image": "assets/img/beet_400.webp",
+    "tags": ["vegetarian"],
+    "description": "Candy-stripe beets, goat cheese, candied pecans, arugula."
+  },
+  {
+    "id": 4,
+    "name": "Spicy Calamari",
+    "price": 16,
+    "image": "assets/img/calamari_400.webp",
+    "tags": ["spicy"],
+    "description": "Flash-fried squid, house chili-lime glaze, scallions."
   }
 ]
