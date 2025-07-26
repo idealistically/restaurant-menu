@@ -125,5 +125,13 @@ body.images-off .card img {
 
 h2.category            { font-weight: 900; }        /* Jost Black */
 .card h2               { font-weight: 700; }        /* Jost Bold  */
-.card p                { font-weight: 600;
-                         font-style: italic; }      /* Jost Semi-bold Italic */
+.card p                { font-weight: 600; font-style: italic; }      /* Jost Semi-bold Italic */
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  padding: 0.5rem 0;
+  margin: 0;
+}

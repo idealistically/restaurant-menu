@@ -74,7 +74,7 @@ function renderMenu(data) {
   let html = '';
   Object.entries(grouped).forEach(([cat, items]) => {
     html += `<div class="category-block">
-               <h2 class="category">${cat}</h2>
+               <h2 class="category sticky">${cat}</h2>;
                ${items.map(renderItem).join('')}
              </div>`;
   });
