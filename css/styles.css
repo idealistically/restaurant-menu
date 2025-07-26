@@ -118,3 +118,12 @@ body.images-off .card img {
 @media (min-width: 2000px) {
   #menu { grid-template-columns: repeat(5, 1fr); }
 }
+
+#menu .category-block {
+  text-align: center;
+}
+
+h2.category            { font-weight: 900; }        /* Jost Black */
+.card h2               { font-weight: 700; }        /* Jost Bold  */
+.card p                { font-weight: 600;
+                         font-style: italic; }      /* Jost Semi-bold Italic */
