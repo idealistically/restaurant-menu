@@ -77,10 +77,13 @@ function renderMenu(data) {
   const grouped = groupBy(data, 'category');
   let html = '';
   Object.entries(grouped).forEach(([cat, items]) => {
-    html += `<div class="category-block">
-               <h2 class="category sticky">${cat}</h2>
-               ${items.map(renderItem).join('')}
-             </div>`;
+  html += `<div class="category-block">
+           <h2 class="category sticky">
+             ${cat}
+             ${cat === 'Little Hunter' ? '<br><small>Kids Meals come with a choice of soft drink or juice</small>' : ''}
+           </h2>
+           ${items.map(renderItem).join('')}
+         </div>`;
   });
   menuSection.innerHTML = html;
 }

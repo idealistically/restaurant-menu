@@ -337,7 +337,6 @@
 
   {
     "category": "Little Hunter",
-    "subtitle": "Kids Meals come with a choice of soft drink or juice",
     "name": "Nuggets",
     "price": 13,
     "tags": [],
@@ -345,7 +344,6 @@
   },
   {
     "category": "Little Hunter",
-    "subtitle": "Kids Meals come with a choice of soft drink or juice",
     "name": "Battered Kingfish Goujons",
     "price": 17,
     "tags": ["GFO"],
@@ -353,7 +351,6 @@
   },
   {
     "category": "Little Hunter",
-    "subtitle": "Kids Meals come with a choice of soft drink or juice",
     "name": "Cheeseburger",
     "price": 15,
     "tags": ["GFO"],
@@ -361,8 +358,7 @@
   },
   {
     "category": "Little Hunter",
-    "subtitle": "Kids Meals come with a choice of soft drink or juice",
-    "name": "Beef or Chicken Schnitzel - 180g",
+      "name": "Beef or Chicken Schnitzel - 180g",
     "price": 16,
     "tags": [],
     "description": "Fries / Tomato Sauce"
