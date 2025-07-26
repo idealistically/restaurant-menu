@@ -72,17 +72,12 @@ function renderGravy(g) {
 function renderMenu(data) {
   const grouped = groupBy(data, 'category');
   let html = '';
-
-  for (const [cat, items] of Object.entries(grouped)) {
-    html += `<h2 class="category">${cat}</h2>`;
-    items.forEach(it => (html += renderItem(it)));
-
-    // immediately after Schnitzels, insert Gravies & Toppings once
-    if (cat === 'Schnitzels' && grouped['Gravies & Toppings']) {
-      html += `<h2 class="category">Gravies & Toppings</h2>`;
-      grouped['Gravies & Toppings'].forEach(g => (html += renderGravy(g)));
-    }
-  }
+  Object.entries(grouped).forEach(([cat, items]) => {
+    html += `<div class="category-block">
+               <h2 class="category">${cat}</h2>
+               ${items.map(renderItem).join('')}
+             </div>`;
+  });
   menuSection.innerHTML = html;
 }
 

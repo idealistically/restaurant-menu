@@ -107,32 +107,14 @@ body.images-off .card img {
   gap: 0.5rem;
 }
 
-/* ---------- CATEGORY-LEVEL COLUMNS ---------- */
 #menu {
-  column-gap: 2rem;
-  orphans: 1;
-  widows: 1;
+  display: grid;
+  gap: 2rem;
+  /* each column must be at least 400 px, but let auto-fit add more */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-@media (min-width: 600px) and (max-width: 899px)  { #menu { column-count: 2; } }
-@media (min-width: 900px) and (max-width: 1199px) { #menu { column-count: 3; } }
-@media (min-width: 1200px) and (max-width: 1499px){ #menu { column-count: 4; } }
-@media (min-width: 1500px)                         { #menu { column-count: 5; } }
-
-h2.category { break-inside: avoid; margin: 0 0 0.5rem 0; }
-
-/* helper classes so JS drops each category into the right grid area */
-[data-category="TO SHARE"]      { grid-area: shared; }
-[data-category="Entrées"]       { grid-area: entrées; }
-[data-category="Oysters"]       { grid-area: oysters; }
-[data-category="Hooked"]        { grid-area: hooked; }
-[data-category="Hunted"]        { grid-area: hunted; }
-[data-category="Burgers"]       { grid-area: burgers; }
-[data-category="Bowls"]         { grid-area: bowls; }
-[data-category="Add Ons"]       { grid-area: addons; }
-[data-category="Schnitzels"]    { grid-area: schnitzels; }
-[data-category="Gravies & Toppings"] { grid-area: gravies; }
-[data-category="Sides"]         { grid-area: sides; }
-[data-category="Pizzas"]        { grid-area: pizzas; }
-[data-category="Little Hunter"] { grid-area: lil; }
-[data-category="Dessert"]       { grid-area: desserts; }
+/* never allow more than 5 columns */
+@media (min-width: 2000px) {
+  #menu { grid-template-columns: repeat(5, 1fr); }
+}
