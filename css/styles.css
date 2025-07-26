@@ -181,3 +181,23 @@ h2.category
   height: 1px;
   background: #555A6F;
 }
+
+#topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+#topbar h1 { margin: 0; font-size: 2.5rem; }
+
+#controls-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+/* category headers stick right below the single sticky bar */
+h2.category.sticky { top: 4.25rem; }  /* match #topbar height */
