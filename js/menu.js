@@ -15,11 +15,11 @@ function groupBy(arr, key) {
   }, {});
 }
 
-/* ---------- image toggle ---------- */
+/* ---------- image toggle ---------- 
 let imagesOn = localStorage.getItem(imagesKey) === 'on';
 applyImageToggle();
 
-themeBtn.addEventListener('click', toggleTheme);
+
 $('#imgToggle').addEventListener('click', toggleImages);
 
 function toggleImages() {
@@ -33,16 +33,24 @@ function applyImageToggle() {
   $('#imgToggle').textContent = imagesOn ? '📷 ON' : '📷 OFF';
 }
 
-function toggleTheme() {
-  /* keep the toggle for users who need light mode */
-  const dark = document.documentElement.dataset.theme === 'dark';
-  const next = dark ? '' : 'dark';
-  document.documentElement.dataset.theme = next;
-  localStorage.setItem('theme', next);
-}
+*/
+/* always start dark */
 
+themeBtn.addEventListener('click', toggleTheme);
 document.documentElement.dataset.theme = 'dark';
 localStorage.setItem('theme', 'dark');
+themeBtn.textContent = '| LIGHT MODE |';   // because we're already **in** dark mode
+
+function toggleTheme() {
+  const isDark = document.documentElement.dataset.theme === 'dark';
+  const next   = isDark ? '' : 'dark';
+  document.documentElement.dataset.theme = next;
+  localStorage.setItem('theme', next);
+  themeBtn.textContent = isDark ? '| DARK MODE |' : '| LIGHT MODE |';
+}
+
+
+
 
 /* ---------- render ---------- */
 function renderItem(it) {
@@ -74,6 +82,7 @@ function renderGravy(g) {
 }
 
 function renderMenu(data) {
+
   const grouped = groupBy(data, 'category');
   let html = '';
   Object.entries(grouped).forEach(([cat, items]) => {
@@ -88,9 +97,31 @@ function renderMenu(data) {
   menuSection.innerHTML = html;
 }
 
-/* ---------- fetch & init ---------- */
+
 fetch('data/menu.json')
   .then(r => r.json())
-  .then(renderMenu);
+  .then(data => {
+    const filterBtns = document.querySelectorAll('#filters [data-filter]');
+    let menuData = data;
+
+    // initial render
+    renderMenu(menuData);
+
+    // attach listeners only after DOM
+    filterBtns.forEach(btn =>
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const tag = btn.dataset.filter;
+        const list =
+          tag === 'all'
+            ? menuData
+            : menuData.filter(d => d.tags && d.tags.some(t => String(t).toLowerCase().includes('vegetarian')));
+        renderMenu(list);
+      })
+    );
+  });
+
 
 yearSpan.textContent = new Date().getFullYear();
