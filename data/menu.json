@@ -1,4 +1,25 @@
 [
+    {
+    "category": "TO SHARE",
+    "name": "Hooked",
+    "price": 145,
+    "tags": ["GFO", "2+"],
+    "description": "Pale Ale Battered King George Whiting / Char Grilled Spencer Gulf King Prawns / 6 Kilpatrick Coffin Bay Oysters / Szechuan Fried Calamari / 1kg 'Nduja Mussel Pot / Seared Hiramasa Kingfish / Fries / Confit Garlic Aioli / Salad"
+  },
+  {
+    "category": "TO SHARE",
+    "name": "Hunted",
+    "price": 130,
+    "tags": ["GFO", "2+"],
+    "description": "Massaman Beef Cheek / Sticky Achaari Lamb Ribs / Boston Bay Small Goods Pork Tomahawk / Confit Chicken / Korean Chicken / Boston Bay Small Goods Chorizo / Fries / Ranch / Salad"
+  },
+  {
+    "category": "TO SHARE",
+    "name": "Hooked & Hunted",
+    "price": 260,
+    "tags": ["GFO", "4+"],
+    "description": "Pale Ale Battered King George Whiting / Char Grilled Spencer Gulf King Prawns / 6 Kilpatrick Coffin Bay Oysters / Szechuan Fried Calamari / 1kg 'Nduja Mussel Pot / Seared Hiramasa Kingfish / Massaman Beef Cheek / Boston Bay Small Goods Pork Tomahawk / Achaari Lamb Ribs / Boston Bay Small Goods Chorizo / Korean Chicken / Confit Chicken / Fries / Ranch / Nam Jim / Confit Garlic Aioli / Salad"
+  },
   {
     "category": "Entrées",
     "name": "Garlic Bread",
