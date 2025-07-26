@@ -1,70 +1,97 @@
-// fetch JSON, render cards, filter & dark-mode toggle
-const menuEl = document.getElementById('menu');
-const filterBtns = document.querySelectorAll('[data-filter]');
+/* ---------- menu.js  (complete replacement) ---------- */
+const menuSection = document.getElementById('menu');
+const graviesSection = document.getElementById('gravies-toppings');
 const themeBtn = document.getElementById('themeToggle');
 const yearSpan = document.getElementById('year');
+const imagesKey = 'images';
 
-let menuData = [];
+/* ---------- helpers ---------- */
+function $(sel, ctx = document) { return ctx.querySelector(sel); }
 
-async function loadMenu() {
-  const res = await fetch('data/menu.json');
-  menuData = await res.json();
-  render(menuData);
+function groupBy(arr, key) {
+  return arr.reduce((acc, cur) => {
+    (acc[cur[key]] = acc[cur[key]] || []).push(cur);
+    return acc;
+  }, {});
 }
 
-function render(list) {
-  menuEl.innerHTML = list.map(card).join('');
+/* ---------- image toggle ---------- */
+let imagesOn = localStorage.getItem(imagesKey) === 'on';
+applyImageToggle();
+
+themeBtn.addEventListener('click', toggleTheme);
+$('#imgToggle').addEventListener('click', toggleImages);
+
+function toggleImages() {
+  imagesOn = !imagesOn;
+  applyImageToggle();
+  localStorage.setItem(imagesKey, imagesOn ? 'on' : 'off');
 }
 
-const card = ({name, price, image, description}) => `
-  <article class="card">
-    <img src="${image}" alt="${name}" width="400" height="300" loading="lazy" />
-    <h2>${name}</h2>
-    <p>${description}</p>
-    <strong>$${price.toFixed(2)}</strong>
-  </article>
-`;
+function applyImageToggle() {
+  document.body.classList.toggle('images-off', !imagesOn);
+  $('#imgToggle').textContent = imagesOn ? '📷 ON' : '📷 OFF';
+}
 
-// filtering
-filterBtns.forEach(btn =>
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.toggle('active', b === btn));
-    const tag = btn.dataset.filter;
-    const filtered =
-      tag === 'all' ? menuData : menuData.filter(item => item.tags.includes(tag));
-    render(filtered);
-  })
-);
-
-// dark-mode toggle
-const stored = localStorage.getItem('theme');
-if (stored) document.documentElement.dataset.theme = stored;
-themeBtn.addEventListener('click', () => {
+function toggleTheme() {
   const dark = document.documentElement.dataset.theme === 'dark';
   const next = dark ? '' : 'dark';
   document.documentElement.dataset.theme = next;
   localStorage.setItem('theme', next);
-});
-/* ---------- images ON / OFF ---------- */
-const imgBtn = document.getElementById('imgToggle');
-const imagesKey = 'images';
-
-// default = OFF
-let imagesOn = localStorage.getItem(imagesKey) !== 'on';
-toggleImages();
-
-imgBtn.addEventListener('click', () => {
-  imagesOn = !imagesOn;
-  toggleImages();
-});
-
-function toggleImages() {
-  document.body.classList.toggle('images-off', !imagesOn);
-  imgBtn.textContent = imagesOn ? '📷 ON' : '📷 OFF';
-  localStorage.setItem(imagesKey, imagesOn ? 'on' : 'off');
 }
 
-// footer year
-yearSpan.textContent = new Date().getFullYear();
+/* ---------- render ---------- */
+function renderItem(it) {
+  let price = `<strong>$${it.price}</strong>`;
+  if (it.halfDozen && it.dozen) {
+    price = `<span class="price-dual">½ Dozen $${it.halfDozen} / Dozen $${it.dozen}</span>`;
+  }
+  return `
+    <article class="card">
+      ${it.image ? `<img src="${it.image}" alt="${it.name}" loading="lazy" />` : ''}
+      ${it.subcategory ? `<h3 class="subcategory">${it.subcategory}</h3>` : ''}
+      <h2>${it.name}</h2>
+      ${it.subtitle ? `<p class="subtitle">${it.subtitle}</p>` : ''}
+      <p>${it.description}</p>
+      ${price}
+    </article>`;
+}
 
-loadMenu();
+function renderGravy(g) {
+  if (g.type === 'group') {
+    return `
+      <article class="card">
+        <h2>${g.name}</h2>
+        <p>${g.options.join(' / ')}</p>
+        <strong>$${g.price}</strong>
+      </article>`;
+  }
+  return renderItem(g);
+}
+
+function renderMenu(data) {
+  const grouped = groupBy(data, 'category');
+  let html = '';
+  let gravies = [];
+
+  for (const [cat, items] of Object.entries(grouped)) {
+    if (cat === 'Gravies & Toppings') {
+      gravies = items;
+      continue;
+    }
+    html += `<h2 class="category">${cat}</h2>`;
+    items.forEach(it => (html += renderItem(it)));
+    if (cat === 'Schnitzels' && gravies.length) {
+      html += `<h2 class="category">Gravies & Toppings</h2>`;
+      gravies.forEach(g => (html += renderGravy(g)));
+    }
+  }
+  menuSection.innerHTML = html;
+}
+
+/* ---------- fetch & init ---------- */
+fetch('data/menu.json')
+  .then(r => r.json())
+  .then(renderMenu);
+
+yearSpan.textContent = new Date().getFullYear();

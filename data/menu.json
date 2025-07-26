@@ -1,34 +1,371 @@
 [
   {
-    "id": 1,
-    "name": "Truffle Risotto",
-    "price": 22,
-    "image": "assets/img/risotto_400.webp",
-    "tags": ["vegetarian"],
-    "description": "Creamy Arborio rice with black truffle shavings."
+    "category": "Entrées",
+    "name": "Garlic Bread",
+    "price": 11,
+    "tags": ["GFO"],
+    "description": "Confit Garlic & Parsley Butter"
   },
   {
-    "id": 2,
-    "name": "Grilled Rib-eye",
-    "price": 32,
-    "image": "assets/img/steak_400.webp",
+    "category": "Entrées",
+    "name": "Pesto and Cheddar Ciabatta",
+    "price": 15,
     "tags": [],
-    "description": "12-oz grass-fed rib-eye, chimichurri, roasted potatoes."
+    "description": "Boston Bay Small Goods Bacon / Parmesan / Confit Garlic"
   },
   {
-    "id": 3,
-    "name": "Roasted Beet Salad",
+    "category": "Entrées",
+    "name": "Seared Hiramasa Kingfish",
+    "price": 20,
+    "tags": ["GO"],
+    "description": "Caramel Miso Ponzu / Crisp Potato / Chilli Oil / Charred Turkish Toast"
+  },
+  {
+    "category": "Entrées",
+    "name": "Korean Chicken",
+    "price": 17,
+    "tags": ["DF"],
+    "description": "Gochujang / Fresh Herbs"
+  },
+  {
+    "category": "Entrées",
+    "name": "Sticky Achaari Lamb Ribs",
+    "price": 22,
+    "tags": ["GF"],
+    "description": "Labneh / N'duja Oil / Candied Macadamia"
+  },
+
+  {
+    "category": "Oysters",
+    "subcategory": "COFFIN BAY",
+    "name": "Natural",
+    "halfDozen": 22,
+    "dozen": 40,
+    "tags": ["GF"],
+    "description": "Lemon"
+  },
+  {
+    "category": "Oysters",
+    "subcategory": "COFFIN BAY",
+    "name": "Kilpatrick",
+    "halfDozen": 24,
+    "dozen": 42,
+    "tags": ["GF"],
+    "description": "Boston Bay Small Goods Smoky Bacon / House Kilpatrick Ft. Beerenberg Chilli Jam"
+  },
+  {
+    "category": "Oysters",
+    "subcategory": "COFFIN BAY",
+    "name": "Fiery Tide",
+    "halfDozen": 23,
+    "dozen": 42,
+    "tags": [],
+    "description": "Fried With Crispy Chilli And Shallot Oil / Labneh / Charred Lime"
+  },
+
+  {
+    "category": "Hooked",
+    "name": "1kg Local 'Nduja Mussels",
+    "price": 41,
+    "tags": ["GFO"],
+    "description": "Boston Bay Small Goods 'Nduja / Charred Cherry Tomato / Crème Fraiche / Cavolo Nero / Toasted Focaccia"
+  },
+  {
+    "category": "Hooked",
+    "name": "Garlic Prawns",
+    "price": 39,
+    "tags": ["GF"],
+    "description": "Spencer Gulf King Prawns / Charred Cherry Tomato / Cavolo Nero / Basmati Rice"
+  },
+  {
+    "category": "Hooked",
+    "name": "150 Lashes Battered King George Whiting",
+    "price": 40,
+    "tags": ["GFO"],
+    "description": "Two Fillets With Fries / Salad / Confit Garlic Aioli"
+  },
+  {
+    "category": "Hooked",
+    "name": "Boston Bay Fettuccini",
+    "price": 38,
+    "tags": [],
+    "description": "Local Calamari / Spencer Gulf Prawns / Boston Bay Mussels / Charred Cherry Tomato / Fresh Basil / Olive Oil"
+  },
+  {
+    "category": "Hooked",
+    "name": "Crispy Calamari",
+    "price": 35,
+    "tags": ["GFO"],
+    "description": "Tossed In Szechuan Chilli And Shallot Oil / Spring Onion / Basil Aioli / Salad"
+  },
+
+  {
+    "category": "Hunted",
+    "name": "Massaman Beef Cheek",
+    "price": 43,
+    "tags": ["GF"],
+    "description": "12 Hour Braised With Palau Rice / Crisp Leek and Lemongrass / Roti"
+  },
+  {
+    "category": "Hunted",
+    "name": "Char Grilled Scotch Fillet 300g",
+    "price": 49,
+    "tags": ["GF"],
+    "subtitle": "Marble Score 3+",
+    "description": "Brown Butter & Mushroom Puree / Broccolini / Tallow Roasted Chats Potato / Caramelised Shallot / Port Jus"
+  },
+  {
+    "category": "Hunted",
+    "name": "Pork Tomahawk",
+    "price": 43,
+    "tags": ["GFO"],
+    "description": "500g Boston Bay Small Goods Tomahawk / Brown Butter & Mushroom Puree / Sauteed Cavalo Nero / Tallow Roasted Chats"
+  },
+  {
+    "category": "Hunted",
+    "name": "Tallow Confit Chicken",
+    "price": 33,
+    "tags": [],
+    "description": "Smoked Labneh / Farro Risotto / Nduja Oil"
+  },
+  {
+    "category": "Hunted",
+    "name": "Ricotta Gnudi",
+    "price": 28,
+    "tags": ["VE"],
+    "description": "Cavolo Nero / Leek & Lemon Myrtle Butter Sauce / White Beans / Crisp Sage"
+  },
+
+  {
+    "category": "Burgers",
+    "name": "Truffle and Jalapeno Wagyu",
+    "price": 30,
+    "tags": ["GFO"],
+    "description": "Caramelised Onion / Pickles / American Cheese / Truffle Aioli / Fresh Jalapeño / Fries"
+  },
+  {
+    "category": "Burgers",
+    "name": "Chicken Katsu",
+    "price": 27,
+    "tags": [],
+    "description": "Crispy Fried Thigh / Pickled Hispi / Tonkatsu / Basil Aioli / Fries"
+  },
+  {
+    "category": "Burgers",
+    "name": "Double Wagyu Cheeseburger",
+    "price": 32,
+    "tags": ["GFO"],
+    "description": "Cheese / Boston Bay Small Goods Bacon / White Onion / Burger Sauce / Fries"
+  },
+
+  {
+    "category": "Bowls",
+    "name": "Candied Pepita & Roast Pumpkin",
+    "price": 20,
+    "tags": ["GFO", "V", "VO"],
+    "description": "Roasted Kent Pumpkin / Herbed Labneh / Quinoa / Crushed Pistachio / Orange / Pomegranate / Tahini Dressing"
+  },
+  {
+    "category": "Bowls",
+    "name": "Broccoli Bowl",
+    "price": 26,
+    "tags": ["GFO"],
+    "description": "Toasted Cashew / Roasted Red Onion / Cranberry / Grilled Paprika Chicken / Boston Bay Small Goods Bacon / Creamy Dill Dressing"
+  },
+  {
+    "category": "Bowls",
+    "name": "Bang Bang Chicken",
+    "price": 27,
+    "tags": ["GFO"],
+    "description": "Marinated Chicken / White Rice / Edamame / Pickled Cabbage / Avocado / Crispy Shallots / Gochujang & Sesame Dressing"
+  },
+
+  {
+    "category": "Add Ons",
+    "name": "Char Grilled Haloumi",
+    "price": 9,
+    "tags": ["V", "GF"],
+    "description": "Seasoned With Lemon And Herbs"
+  },
+  {
+    "category": "Add Ons",
+    "name": "Pan Seared Chicken Breast",
+    "price": 12,
+    "tags": ["GF", "DF"],
+    "description": "250g Crispy Skin South Australian Chicken"
+  },
+  {
+    "category": "Add Ons",
+    "name": "Szechuan Calamari",
     "price": 14,
-    "image": "assets/img/beet_400.webp",
-    "tags": ["vegetarian"],
-    "description": "Candy-stripe beets, goat cheese, candied pecans, arugula."
+    "tags": ["GFO"],
+    "description": "Tossed In Szechuan Chilli And Shallot Oil / Spring Onion / Basil Aioli"
+  },
+
+  {
+    "category": "Schnitzels",
+    "name": "Chicken Schnitzel 350g",
+    "price": 28,
+    "tags": [],
+    "description": "Panko Herb Crumbed / Fries / Salad"
   },
   {
-    "id": 4,
-    "name": "Spicy Calamari",
+    "category": "Schnitzels",
+    "name": "Beef Schnitzel 350g",
+    "price": 29,
+    "subtitle": "Marble Score 2+",
+    "description": "Panko Herb Crumbed / Fries / Salad"
+  },
+
+  {
+    "category": "Gravies & Toppings",
+    "name": "Classic Gravies",
+    "type": "group",
+    "price": 4.5,
+    "options": ["Gravy (GF)", "Peppercorn Gravy (GF)", "Creamy Mushroom & Thyme (GF)"]
+  },
+  {
+    "category": "Gravies & Toppings",
+    "name": "Classic Sauces",
+    "type": "group",
+    "price": 5,
+    "options": ["Garlic Cream (GF)", "Hollandaise (GF)"]
+  },
+  {
+    "category": "Gravies & Toppings",
+    "name": "Parmigiana",
+    "price": 6,
+    "tags": ["GF"],
+    "description": "Sugo / Mozzarella"
+  },
+  {
+    "category": "Gravies & Toppings",
+    "name": "Hawaiian",
+    "price": 7,
+    "tags": ["GF"],
+    "description": "Boston Bay Small Goods Bacon / Pineapple / Sugo / Mozzarella"
+  },
+  {
+    "category": "Gravies & Toppings",
+    "name": "Kilpatrick",
+    "price": 7,
+    "tags": ["GF"],
+    "description": "Boston Bay Small Goods Bacon / House Kilpatrick Ft. Beerenberg Chilli Jam / Mozzarella"
+  },
+  {
+    "category": "Gravies & Toppings",
+    "name": "Hooked",
+    "price": 14,
+    "tags": ["GF"],
+    "description": "Boston Bay Mussels / Spencer Gulf Prawns / Local Calamari / Garlic Cream"
+  },
+  {
+    "category": "Gravies & Toppings",
+    "name": "Three Little Pigs",
+    "price": 12,
+    "tags": ["GF"],
+    "description": "Nduja / Bacon Jam / Chorizo / Mozzarella"
+  },
+
+  {
+    "category": "Sides",
+    "name": "Bowl of Fries",
+    "price": 12,
+    "tags": ["V", "DF", "GFO"],
+    "description": "Confit Garlic Aioli"
+  },
+  {
+    "category": "Sides",
+    "name": "Sweet Potato",
+    "price": 14,
+    "tags": ["V", "DF"],
+    "description": "Confit Garlic Aioli"
+  },
+  {
+    "category": "Sides",
+    "name": "Wedges",
+    "price": 15,
+    "tags": ["GFO"],
+    "description": "Sour Cream / Sweet Chilli"
+  },
+
+  {
+    "category": "Pizzas",
+    "subcategory": "GF Base + $5",
+    "name": "Hot Honey Pepperoni",
+    "price": 28,
+    "tags": [],
+    "description": "Jalapeno / Burrata / Mozzarella / Sugo"
+  },
+  {
+    "category": "Pizzas",
+    "subcategory": "GF Base + $5",
+    "name": "Tartucci",
+    "price": 29,
+    "tags": [],
+    "description": "Mushroom / Prosciutto / Red Onion / Mozzarella / Sugo / Fresh Grated Truffle Parmesan"
+  },
+  {
+    "category": "Pizzas",
+    "subcategory": "GF Base + $5",
+    "name": "Hawaiian",
+    "price": 25,
+    "tags": [],
+    "description": "Smoky Boston Bay Small Goods Bacon / Pineapple / Mozzarella / Sugo / Crispy Chilli Oil"
+  },
+
+  {
+    "category": "Little Hunter",
+    "subtitle": "Kids Meals come with a choice of soft drink or juice",
+    "name": "Nuggets",
+    "price": 13,
+    "tags": [],
+    "description": "Fries / Tomato Sauce"
+  },
+  {
+    "category": "Little Hunter",
+    "subtitle": "Kids Meals come with a choice of soft drink or juice",
+    "name": "Battered Kingfish Goujons",
+    "price": 17,
+    "tags": ["GFO"],
+    "description": "Fries / Tomato Sauce"
+  },
+  {
+    "category": "Little Hunter",
+    "subtitle": "Kids Meals come with a choice of soft drink or juice",
+    "name": "Cheeseburger",
+    "price": 15,
+    "tags": ["GFO"],
+    "description": "Wagyu Beef / American Cheese / Tomato Sauce / Fries"
+  },
+  {
+    "category": "Little Hunter",
+    "subtitle": "Kids Meals come with a choice of soft drink or juice",
+    "name": "Beef or Chicken Schnitzel - 180g",
     "price": 16,
-    "image": "assets/img/calamari_400.webp",
-    "tags": ["spicy"],
-    "description": "Flash-fried squid, house chili-lime glaze, scallions."
+    "tags": [],
+    "description": "Fries / Tomato Sauce"
+  },
+
+  {
+    "category": "Dessert",
+    "name": "Toffee Apple Brioche",
+    "price": 16,
+    "tags": [],
+    "description": "Toasted Brioche / Toffee Apple Sauce / Nutmeg Strudel / Vanilla Bean Ice-cream"
+  },
+  {
+    "category": "Dessert",
+    "name": "Pistachio Papi Churros",
+    "price": 17,
+    "tags": ["GFO"],
+    "description": "Crispy Kataifi / Vanilla Bean Ice-cream / Nutella Drizzle / Pistachio Dust"
+  },
+  {
+    "category": "Dessert",
+    "name": "Kids Ice-cream",
+    "price": 6,
+    "tags": ["GF"],
+    "description": "Vanilla Bean Ice-cream With Your Choice Of Chocolate / Vanilla / Caramel / Lime / Mango / Strawberry Topping"
   }
 ]

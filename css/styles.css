@@ -86,6 +86,21 @@ footer {
 body.images-off .card img {
   display: none;
 }
+.subtitle {
+  font-size: .9em;
+  color: var(--accent);
+  margin: .25rem 0;
+}
+.price-dual {
+  display: block;
+  font-size: .9em;
+  color: var(--accent);
+}
+.group-title {
+  font-weight: 600;
+  margin-top: 1rem;
+  color: var(--accent);
+}
 
 .controls {
   display: flex;
