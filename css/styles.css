@@ -107,14 +107,24 @@ body.images-off .card img {
   gap: 0.5rem;
 }
 
-#menu {
-  display: grid;
-  gap: 2rem;
-  /* each column must be at least 400 px, but let auto-fit add more */
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+/* PHONE: single column that always fills the viewport */
+@media (max-width: 430px) {
+  #menu {
+    display: grid;
+    grid-template-columns: 1fr;   /* 100 % of viewport */
+    gap: 1rem;
+  }
+  .card { width: 100%; }
 }
 
-/* never allow more than 5 columns */
+/* TABLET / DESKTOP: up to 5 columns, never narrower than 400 px */
+@media (min-width: 431px) {
+  #menu {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
 @media (min-width: 2000px) {
   #menu { grid-template-columns: repeat(5, 1fr); }
 }
@@ -125,7 +135,8 @@ body.images-off .card img {
 
 h2.category            { font-weight: 900; }        /* Jost Black */
 .card h2               { font-weight: 700; }        /* Jost Bold  */
-.card p                { font-weight: 600; font-style: italic; }      /* Jost Semi-bold Italic */
+.card p                { font-weight: 600;
+   font-style: italic; }      /* Jost Semi-bold Italic */
 
 .sticky {
   position: sticky;

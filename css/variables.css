@@ -4,7 +4,7 @@
   --fw-black:    900;
   --fw-bold:     700;
   --fw-semi-italic: 600;
-  --fs-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --fs-base: clamp(1.25rem, 1.2rem + 0.75vw, 1.725rem);
   --gap: clamp(1rem, 2vw, 2rem);
   --radius: 0.5rem;
 
@@ -15,8 +15,8 @@
 }
 
 [data-theme="dark"] {
-  --bg: #1D1F2F;
-  --bg-alt: #13162c;
+  --bg: #091e3d;
+  --bg-alt: #091a33;
   --text: #e5e5e5;
-  --accent: #ff6b6b;
+  --accent: #554c81;
 }
